@@ -5,7 +5,7 @@ const BlogList = () => {
     <>
       <ul>
         {posts.map((item) => (
-          <li>
+          <li key={item.metadata.title}>
             <a href={`/blog/${item.modName}`}> {item.metadata.title} </a>
           </li>
         ))}
