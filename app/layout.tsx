@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
 
-        <a className="p-10 m-10 text-2xl text-bold" href="/">
+        <a className="text-bold m-10 p-10 text-2xl" href="/">
           <button>return to home</button>
         </a>
       </body>
