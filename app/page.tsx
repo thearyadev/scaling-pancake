@@ -9,10 +9,6 @@ export default function Home() {
         </li>
 
         <li>
-          <a href="/projects">projects</a>
-        </li>
-
-        <li>
           <a href="/about">about</a>
         </li>
 
