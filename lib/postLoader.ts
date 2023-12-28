@@ -8,12 +8,12 @@ export function PostLoader(postDirectory: string): Post[] {
     .readdirSync(directory)
     .filter((filename) => filename.endsWith("tsx"));
   return filenames.map((filename) => {
-    const module = require(
+    const postModule = require(
       `../${postDirectory}/${filename.replace(".tsx", "")}`,
     );
     return {
-      metadata: module.metadata,
-      component: module.default,
+      metadata: postModule.metadata,
+      component: postModule.default,
       modName: filename.replace(".tsx", ""),
     };
   });
