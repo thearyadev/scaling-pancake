@@ -3,3 +3,4 @@
 
 prettier --check .
 next lint
+vitest --run
