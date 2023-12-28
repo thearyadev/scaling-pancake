@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const args = process.argv.slice(2);
-const [name] = args;
+const [type, name] = args;
 
 if (name === undefined){
     console.error("Argument #1 missing: 'name'")
@@ -20,16 +20,16 @@ export const metadata: PostMetadata = {
     date: "${currentDate}"
 }
 
-const BlogPostContent = () => {
+const ${type == "projects" ? 'Projects': "Blog"}PostContent = () => {
     return <>
         {metadata.title}
     </>
 }
 
-export default BlogPostContent
+export default ${type == "projects" ? 'Projects': "Blog"}PostContent
 `;
 
-fs.writeFile(`./blog/${filename}`, fileContent, (err) => {
+fs.writeFile(`./${type}/${filename}`, fileContent, (err) => {
     if (err) throw err;
-    console.log(`A blog file has been created in blog/${name}. Remember to populate this file as it can cause render failures in production.`);
+    console.log(`A ${type} file has been created in ${type}/${name}. Remember to populate this file as it can cause render failures in production.`);
 });
