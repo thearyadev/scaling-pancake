@@ -2,7 +2,7 @@ import { PostLoader } from "@/lib/postLoader";
 const BlogList = () => {
   const posts = PostLoader("blog");
   return (
-    <>
+    <main>
       <ul>
         {posts.map((item) => (
           <li key={item.metadata.title}>
@@ -10,7 +10,7 @@ const BlogList = () => {
           </li>
         ))}
       </ul>
-    </>
+    </main>
   );
 };
 
