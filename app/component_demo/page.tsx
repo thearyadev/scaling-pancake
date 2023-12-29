@@ -85,12 +85,13 @@ const ComponentDemo = () => {
           "link",
         ].map((variant) => {
           return ["default", "sm", "lg", "icon"].map((size) => {
-            // @ts-ignore
             return (
               <Button
                 key={variant}
                 className="m-3"
+                // @ts-ignore
                 variant={variant}
+                // @ts-ignore
                 size={size}
               >
                 Button
