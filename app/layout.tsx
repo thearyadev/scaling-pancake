@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { redirect } from "next/navigation";
+import Breadcrumb from "@/components/breadcrumb/breadcrumb";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Breadcrumb />
         {children}
 
         <a className="text-bold m-10 p-10 text-2xl" href="/">
