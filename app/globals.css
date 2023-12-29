@@ -73,4 +73,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  main {
+    @apply ml-16 mr-16 overflow-auto sm:ml-20 sm:mr-20 md:ml-32 md:mr-32 lg:ml-40 lg:mr-40 xl:ml-56 xl:mr-56 2xl:ml-64 2xl:mr-64;
+  }
 }
