@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 const ProjectsPost = ({ params }: { params: { projectName: string } }) => {
   try {
-    const Post = SinglePostLoader("content/projects", params.projectName)[0];
+    const Post = SinglePostLoader("projects", params.projectName)[0];
     return (
       <>
         <Post.component />

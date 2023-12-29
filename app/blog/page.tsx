@@ -1,6 +1,6 @@
 import { PostLoader } from "@/lib/postLoader";
 const BlogList = () => {
-  const posts = PostLoader("content/blog");
+  const posts = PostLoader("blog");
   return (
     <>
       <ul>
