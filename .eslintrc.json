@@ -1,7 +1,7 @@
 {
-  "extends": "next/core-web-vitals",
-  "ignorePatterns": ["app/component_demo/**"],
-  "env": {
-    "jest": true
-  }
+    "extends": "next/core-web-vitals",
+    "ignorePatterns": ["app/component_demo/**"],
+    "env": {
+        "jest": true
+    }
 }

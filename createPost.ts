@@ -4,8 +4,8 @@ const args = process.argv.slice(2);
 const [type, name] = args;
 
 if (name === undefined) {
-  console.error("Argument #1 missing: 'name'");
-  process.exit(1);
+    console.error("Argument #1 missing: 'name'");
+    process.exit(1);
 }
 
 const filename = `${name}.tsx`;
@@ -30,8 +30,8 @@ export default ${type == "projects" ? "Projects" : "Blog"}PostContent
 `;
 
 fs.writeFile(`./${type}/${filename}`, fileContent, (err) => {
-  if (err) throw err;
-  console.log(
-    `A ${type} file has been created in ${type}/${name}. Remember to populate this file as it can cause render failures in production.`,
-  );
+    if (err) throw err;
+    console.log(
+        `A ${type} file has been created in ${type}/${name}. Remember to populate this file as it can cause render failures in production.`,
+    );
 });
