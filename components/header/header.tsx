@@ -1,15 +1,33 @@
 import Navbar from "@/components/header/nabvar";
 import { PostLoader } from "@/lib/postLoader";
+import CallToActionButton from "@/components/button/ctaButton";
+import Image from "next/image";
 const Header = () => {
-    const projects = PostLoader("projects").map((post) => ({
+    const projectsX = PostLoader("projects").map((post) => ({
         ...post,
         component: undefined,
     }));
+
+    const projects = [
+        ...projectsX,
+        ...projectsX,
+        ...projectsX,
+        ...projectsX,
+        ...projectsX,
+        ...projectsX,
+    ];
     return (
         <header className="sticky top-0 z-30 flex w-screen items-center justify-between bg-background p-5">
-            <h1 className="text-2xl">[logo]</h1>
+            <Image
+                src={"/logo.png"}
+                alt={"The Openary Logo"}
+                width={200}
+                height={100}
+            />
             <Navbar projects={projects} />
-            <h1 className="text-2xl">[utility icons]</h1>
+            <CallToActionButton redirectTo="https://discord.com/invite/VZFWGp7FHZ">
+                Join The Discord!
+            </CallToActionButton>
         </header>
     );
 };
