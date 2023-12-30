@@ -49,21 +49,20 @@ const ScreenSizeIndicator = () => {
     );
     const [actualSize, setActualSize] = useState<number>(window.innerWidth);
     useEffect(() => {
+        setScreenSize(mapPxToSize(window.innerWidth));
+        setActualSize(window.innerWidth);
+
         const handleResize = () => {
             setScreenSize(mapPxToSize(window.innerWidth));
             setActualSize(window.innerWidth);
         };
-
-        // Add event listener
         window.addEventListener("resize", handleResize);
-
-        // Remove event listener on cleanup
         return () => window.removeEventListener("resize", handleResize);
-    }, []); // Empty dependency array ensures this effect runs only once on mount
+    }, []);
 
     return (
         <div
-            className={`fixed top-0 z-30 flex pl-2 pr-2 text-white hover:hidden ${
+            className={`fixed top-0 z-40 flex pl-2 pr-2 text-white hover:hidden ${
                 colorMapping[screenSize] || "bg-red-500"
             }`}
         >
