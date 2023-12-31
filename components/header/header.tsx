@@ -27,7 +27,7 @@ const Header = () => {
                 className="sm:w-auto "
             />
             {/* This is the navbar and buttons*/}
-            <div className="center hidden flex-nowrap justify-between lg:flex lg:space-x-[15vw] 2xl:space-x-[24vw]">
+            <div className="center hidden flex-nowrap justify-between lg:flex lg:space-x-[18vw] xl:space-x-[27.5vw] 2xl:space-x-[32vw]">
                 <Navbar projects={projects} />
                 <CallToActionButton
                     redirectTo="https://discord.com/invite/VZFWGp7FHZ"
