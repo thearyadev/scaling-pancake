@@ -1,8 +1,10 @@
+"use server";
+
 import { Post } from "@/models";
 import path from "path";
 import fs from "fs";
 
-export function PostLoader(postDirectory: string): Post[] {
+export async function PostLoader(postDirectory: string): Promise<Post[]> {
     const directory = path.join(process.cwd(), `content/${postDirectory}`);
     const filenames = fs
         .readdirSync(directory)
@@ -13,15 +15,16 @@ export function PostLoader(postDirectory: string): Post[] {
         );
         return {
             metadata: postModule.metadata,
-            component: postModule.default,
             modName: filename.replace(".tsx", ""),
         };
     });
 }
 
-export function SinglePostLoader(
+export async function SinglePostLoader(
     postDirectory: string,
     modName: string,
-): Post[] {
-    return PostLoader(postDirectory).filter((post) => post.modName === modName);
+): Promise<Post[]> {
+    return (await PostLoader(postDirectory)).filter(
+        (post) => post.modName === modName,
+    );
 }
