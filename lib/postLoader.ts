@@ -1,6 +1,6 @@
 "use server";
 
-import { Post } from "@/models";
+import { Post, PostComponent } from "@/models";
 import path from "path";
 import fs from "fs";
 
@@ -23,8 +23,16 @@ export async function PostLoader(postDirectory: string): Promise<Post[]> {
 export async function SinglePostLoader(
     postDirectory: string,
     modName: string,
-): Promise<Post[]> {
-    return (await PostLoader(postDirectory)).filter(
+): Promise<PostComponent | null> {
+    const posts = (await PostLoader(postDirectory)).filter(
         (post) => post.modName === modName,
     );
+    if (posts.length !== 0) {
+        return {
+            ...posts[0],
+            component: require(`../content/${postDirectory}/${modName}`)
+                .default,
+        };
+    }
+    return null;
 }
