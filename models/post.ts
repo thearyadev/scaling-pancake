@@ -5,3 +5,7 @@ export type Post = {
     metadata: PostMetadata;
     modName: string;
 };
+
+export type PostComponent = Post & {
+    component: React.FunctionComponent<any>;
+};
