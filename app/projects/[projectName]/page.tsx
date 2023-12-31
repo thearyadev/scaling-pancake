@@ -1,21 +1,20 @@
 import { SinglePostLoader } from "@/lib/postLoader";
 import { notFound } from "next/navigation";
+import Navbar from "@/components/header/nabvar";
 
-const ProjectsPost = ({ params }: { params: { projectName: string } }) => {
-    try {
-        const Post = SinglePostLoader("projects", params.projectName)[0];
-
-        if (typeof Post.component === "undefined") {
-            notFound();
-        }
-
-        return (
-            <main>
-                <Post.component />
-            </main>
-        );
-    } catch (error) {
+const ProjectsPost = async ({
+    params,
+}: {
+    params: { projectName: string };
+}) => {
+    const Post = await SinglePostLoader("projects", params.projectName);
+    if (!Post) {
         notFound();
     }
+    return (
+        <main>
+            <Post.component />
+        </main>
+    );
 };
 export default ProjectsPost;

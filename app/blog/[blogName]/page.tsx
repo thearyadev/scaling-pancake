@@ -1,20 +1,15 @@
 import { SinglePostLoader } from "@/lib/postLoader";
 import { notFound } from "next/navigation";
 
-const BlogPost = ({ params }: { params: { blogName: string } }) => {
-    try {
-        const Post = SinglePostLoader("blog", params.blogName)[0];
-        if (typeof Post.component === "undefined") {
-            notFound();
-        }
-
-        return (
-            <main>
-                <Post.component />
-            </main>
-        );
-    } catch (error) {
+const BlogPost = async ({ params }: { params: { blogName: string } }) => {
+    const Post = await SinglePostLoader("blog", params.blogName);
+    if (!Post) {
         notFound();
     }
+    return (
+        <main>
+            <Post.component />
+        </main>
+    );
 };
 export default BlogPost;

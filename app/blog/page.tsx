@@ -1,6 +1,6 @@
 import { PostLoader } from "@/lib/postLoader";
-const BlogList = () => {
-    const posts = PostLoader("blog");
+const BlogList = async () => {
+    const posts = await PostLoader("blog");
     return (
         <main>
             <ul>
