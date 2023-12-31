@@ -8,7 +8,7 @@ export const metadata: PostMetadata = {
 };
 
 const BlogPostContent = () => {
-    return <>{metadata.title}</>;
+    return <h1>{metadata.title}</h1>;
 };
 
 export default BlogPostContent;
