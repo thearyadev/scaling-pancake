@@ -1,0 +1,13 @@
+-   header
+    -   mobile nav
+    -   main nav centered on all sizes
+-   blog body default template
+    -   add style targeting to ensure title/subtitle and other things are the same across all blog posts
+-   blog list
+    -   make
+-   footer
+    -   make
+-   theming
+    -   define custom colors in globals.css
+    -   style all other components that do not inherit from the base styles
+-
