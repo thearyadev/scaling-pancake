@@ -27,13 +27,16 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-30 flex flex-nowrap items-center justify-between bg-background pb-5 pl-10 pr-10 pt-5 ">
-            <Image
-                src={"/logo.png"}
-                alt={"The Openary Logo"}
-                width={150}
-                height={50}
-                className="sm:w-auto "
-            />
+            <Link href="/">
+                <Image
+                    src={"/logo.png"}
+                    alt={"The Openary Logo"}
+                    width={150}
+                    height={50}
+                    className="sm:w-auto "
+                />
+            </Link>
+
             <div className="center hidden flex-nowrap justify-between lg:flex lg:space-x-[18vw] xl:space-x-[27.5vw] 2xl:space-x-[32vw]">
                 <Navbar projects={projects} />
                 <CallToActionButton
