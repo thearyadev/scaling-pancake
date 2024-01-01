@@ -35,7 +35,7 @@ const Navbar = ({ projects }: { projects: Post[] }) => {
                                 <ListItem
                                     key={project.metadata.title}
                                     title={project.metadata.title}
-                                    href={`projects/${project.modName}`}
+                                    href={`/projects/${project.modName}`}
                                 >
                                     {project.metadata.description}
                                 </ListItem>
