@@ -10,7 +10,7 @@
 -   theming
     -   define custom colors in globals.css
     -   style all other components that do not inherit from the base styles
-- readme.md
-- contributing.md
-- dockerfile
-- docker compose
+-   readme.md
+-   contributing.md
+-   dockerfile
+-   docker compose
