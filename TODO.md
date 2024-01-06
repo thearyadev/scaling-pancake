@@ -14,3 +14,4 @@
 -   contributing.md
 -   dockerfile
 -   docker compose
+-   gnome
