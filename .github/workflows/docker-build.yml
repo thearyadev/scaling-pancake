@@ -2,12 +2,12 @@ name: Docker Build
 
 
 on:
-  pull_request_review:
-    branches: [development, wip/**]
   pull_request:
-    branches: [development, wip/**]
   push:
-    branches: [development, wip/**]
+    branches:
+      - development
+      - production
+      - wip/**
 
 jobs:
   build:
@@ -22,3 +22,6 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+      -
+        name: Build Image
+        run: docker build -t the-openary-test-build .
