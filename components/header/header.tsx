@@ -1,4 +1,3 @@
-"use client";
 
 import Navbar from "@/components/header/nabvar";
 import { PostLoader } from "@/lib/postLoader";
@@ -6,25 +5,15 @@ import CallToActionButton from "@/components/button/ctaButton";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
-import { useEffect, useState } from "react";
 import { Post } from "@/models";
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
 
-const Header = () => {
-    useEffect(() => {
-        PostLoader("projects").then((posts) => {
-            setProjects(posts);
-        });
-    }, []); // get all posts (server action)
-    const [projects, setProjects] = useState<Post[]>([]);
-
+const Header = async () => {
+    const projects: Post[] = await PostLoader('projects')
     return (
         <header className="sticky top-0 z-30 flex flex-nowrap items-center justify-between bg-background pb-5 pl-10 pr-10 pt-5 ">
             <Link href="/">
