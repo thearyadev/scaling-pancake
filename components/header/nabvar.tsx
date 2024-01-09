@@ -51,6 +51,16 @@ const Navbar = ({ projects }: { projects: Post[] }) => {
                             Blog
                         </NavigationMenuLink>
                     </Link>
+ 
+                </NavigationMenuItem>
+               <NavigationMenuItem>
+                    <Link href="/the-team" legacyBehavior passHref>
+                        <NavigationMenuLink
+                            className={navigationMenuTriggerStyle()}
+                        >
+                            Team
+                        </NavigationMenuLink>
+                    </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
