@@ -20,7 +20,7 @@ const Header = async () => {
                 <img
                     src={"/logo.png"}
                     alt={"The Openary Logo"}
-                    className=" w-36"
+                    className="w-36"
                 />
             </Link>
 
