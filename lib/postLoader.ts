@@ -1,5 +1,3 @@
-"use server"; // client server action compatible
-
 import { Post, PostComponent } from "@/models";
 import path from "path";
 import fs from "fs";
