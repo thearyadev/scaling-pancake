@@ -1,5 +1,13 @@
-import { SinglePostLoader } from "@/lib/postLoader";
+import { SinglePostLoader, PostLoader } from "@/lib/postLoader";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+    const posts = await PostLoader("blog")
+    return posts.map(post => ({
+        blogName: post.modName
+    }))
+}
+
 
 const BlogPost = async ({ params }: { params: { blogName: string } }) => {
     const Post = await SinglePostLoader("blog", params.blogName);
