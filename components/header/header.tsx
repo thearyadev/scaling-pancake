@@ -17,12 +17,10 @@ const Header = async () => {
     return (
         <header className="sticky top-0 z-30 flex flex-nowrap items-center justify-between bg-background pb-5 pl-10 pr-10 pt-5 ">
             <Link href="/">
-                <Image
+                <img
                     src={"/logo.png"}
                     alt={"The Openary Logo"}
-                    width={150}
-                    height={50}
-                    className="sm:w-auto "
+                    className=" w-36"
                 />
             </Link>
 
