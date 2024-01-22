@@ -29,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-     - name: Detect package manager
+      - name: Detect package manager
         id: detect-package-manager
         run: |
             echo "manager=npm" >> $GITHUB_OUTPUT
