@@ -1,6 +1,13 @@
-import { SinglePostLoader } from "@/lib/postLoader";
+import { PostLoader, SinglePostLoader } from "@/lib/postLoader";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/header/nabvar";
+
+
+export async function generateStaticParams() {
+    const posts = await PostLoader("projects")
+    return posts.map(post => ({
+        projectName: post.modName
+    }))
+}
 
 const ProjectsPost = async ({
     params,
