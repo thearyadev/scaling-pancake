@@ -2,4 +2,4 @@
 
 ## This repo is WIP.
 
-__Please see [the contribution guidelines](./CONTRIBUTING.md)__
+**Please see [the contribution guidelines](./CONTRIBUTING.md)**

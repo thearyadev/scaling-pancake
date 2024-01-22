@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/header/nabvar";
 import { PostLoader } from "@/lib/postLoader";
 import CallToActionButton from "@/components/button/ctaButton";
@@ -6,14 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import { Post } from "@/models";
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Header = async () => {
-    const projects: Post[] = await PostLoader('projects')
+    const projects: Post[] = await PostLoader("projects");
     return (
         <header className="sticky top-0 z-30 flex flex-nowrap items-center justify-between bg-background pb-5 pl-10 pr-10 pt-5 ">
             <Link href="/">

@@ -11,5 +11,5 @@
     -   define custom colors in globals.css
     -   style all other components that do not inherit from the base styles
 -   readme.md
-- add vitest to workflows
-- add production workflow (push to ghcr)
+-   add vitest to workflows
+-   add production workflow (push to ghcr)

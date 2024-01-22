@@ -25,7 +25,8 @@ export async function SinglePostLoader(
     const posts = (await PostLoader(postDirectory)).filter(
         (post) => post.modName === modName,
     ); // get target post
-    if (posts.length !== 0) { // if post found
+    if (posts.length !== 0) {
+        // if post found
         return {
             ...posts[0],
             component: require(`../content/${postDirectory}/${modName}`)

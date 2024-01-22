@@ -1,5 +1,5 @@
 import { PostMetadata } from "@/models";
-import {twMerge} from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 
 export const metadata: PostMetadata = {
     title: "",
@@ -9,13 +9,14 @@ export const metadata: PostMetadata = {
 };
 
 const BlogPostContent = () => {
-    return <>{metadata.title}
+    return (
+        <>
+            {metadata.title}
             <div className={twMerge("bg-green-500", "md:bg-blue-500")}>
-
                 <h1>hello world</h1>
             </div>
-
-    </>;
+        </>
+    );
 };
 
 export default BlogPostContent;
