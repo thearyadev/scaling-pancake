@@ -13,3 +13,4 @@
 -   readme.md
 - add vitest to workflows
 - add production workflow (push to ghcr)
+- remove shadcn
